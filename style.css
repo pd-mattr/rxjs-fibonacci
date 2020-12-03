@@ -1,0 +1,44 @@
+@media (prefers-color-scheme: light) {
+    html {
+      background: #fff;
+      color: rgb(51,51,51);
+    }
+
+    code {
+      background: #eee;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background: rgb(42,47,57);
+        color: #eee;
+    }
+
+    code {
+      background: #2F3437;
+    }
+}
+
+html{
+    margin-left: 10px;
+    font-weight: normal;
+    font-style: normal;
+    font-family: "Roboto";
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+code {
+  font-family: "Roboto Mono";
+  padding: 3px;
+  border-radius: 8px;
+}
