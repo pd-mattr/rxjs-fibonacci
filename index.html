@@ -15,14 +15,16 @@
   </head>
   <body>
     <h1>Generating the Fibonacci Sequence</h1>
-      <p>Write rxjs code to generate a fibonacci sequence.  Please do it "from scratch" by building a <code>new Observable</code>.  We will investigate "better" ways later.  Just emit the first 200 fibonacci numbers.
+      <p>Write rxjs code to generate a fibonacci sequence.  Please do it "from scratch" by building a <code>new Observable</code>.  We will investigate "better" ways later.  You should emit only the first 200 fibonacci numbers.  Add your code in <code>fib.js</code> in the <code>fib</code> variable.</p>
+
+      <p><strong>Further:</strong> Can you write a version that infinitely generates numbers wihout hanging the browser? Put a 500ms delay between each emission so you can watch the events appearing in the list below.  Add your code in <code>fib.js</code> in the <code>forever_fib</code> variable.</p>
 
       <div id="mocha"></div>
       <script src="fib.js"></script>
 
-      <div id="sequence">
-        <h2>The numbers</h2>
-      <div>
+      <div id="sequence" style="float:left">
+        <h2>The first 50</h2>
+      </div>
       <script>
         var ol = $("<ol/>");
         fib.subscribe(v => {
@@ -30,5 +32,17 @@
         });
         $("#sequence").append(ol);
       </script>
+
+      <div id="forever" style="float:right">
+        <h2>All (eventually)</h2>
+      </div>
+      <script>
+        var ol = $("<ol/>");
+        fib_forever.subscribe(v => {
+          ol.append($("<li/>").text(v));
+        });
+        $("#forever").append(ol);
+      </script>
+
   </body>
 </html>

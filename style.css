@@ -39,3 +39,11 @@ code {
   font: inherit;
   margin: inherit;
 }
+
+#mocha-stats {
+  color: inherit;
+}
+
+#mocha-stats em {
+  color: inherit;
+}
