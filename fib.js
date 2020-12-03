@@ -1,10 +1,11 @@
- fib = Rx.Observable.create(subscriber => {
- 
-        });
+fib = Rx.Observable.create(subscriber => {
+
+});
       
 fib_forever = Rx.Observable.create(subscriber => {
 
-})
+});
+
 mocha.setup("bdd");
 
 describe("fast fibonacci", function(){
