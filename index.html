@@ -9,60 +9,26 @@
     <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.4.0/Rx.min.js"></script>
+    <script src="rx.min.js"></script>
     <script src="https://unpkg.com/chai/chai.js"></script>
     <script src="https://unpkg.com/mocha/mocha.js"></script>
   </head>
   <body>
     <h1>Generating the Fibonacci Sequence</h1>
-      <p>Write rxjs code to generate a fibonacci sequence.  Plese do it "from scratch" by building a <code>new Observable</code>.  We will investigate "better" ways later.  Just emit the first 200 fibonacci numbers.
+      <p>Write rxjs code to generate a fibonacci sequence.  Please do it "from scratch" by building a <code>new Observable</code>.  We will investigate "better" ways later.  Just emit the first 200 fibonacci numbers.
 
-      <script>
-        fib = Rx.Observable.create(subscriber => {
-          
-        });
-      </script>
-      
       <div id="mocha"></div>
-      <script class="mocha-init">
-        mocha.setup("bdd");
-        mocha.checkLeaks();
-      </script>
-      <script class="mocha-exec">
-        describe("fibonacci", () => {
-          it("should emit at least ten elements", (done) => {
-            fib.take(10)
-               .count()
-               .subscribe(v => {
-                  chai.assert.equal(v,10);
-                  done();
-               });
-          });
-          it("should start with 0", (done) => {
-            fib.first()
-               .subscribe(v => {
-                 chai.assert.equal(v, 0);
-                 done();
-               });
-          });
-          it("should have a 1 in the second slot", (done) => {
-            fib.skip(1)
-               .first()
-               .subscribe(v => {
-                 chai.assert.equal(v, 1);
-                 done();
-               });
-          });
-          it("the 50th value should be correct", (done) => {
-            fib.skip(49)
-               .first()
-               .subscribe(v => {
-                 chai.assert.equal(v, 7778742049);
-                 done();
-               });
-          })
+      <script src="fib.js"></script>
+
+      <div id="sequence">
+        <h2>The numbers</h2>
+      <div>
+      <script>
+        var ol = $("<ol/>");
+        fib.subscribe(v => {
+          ol.append($("<li/>").text(v));
         });
-        mocha.run();
+        $("#sequence").append(ol);
       </script>
   </body>
 </html>
