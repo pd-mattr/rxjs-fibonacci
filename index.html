@@ -21,6 +21,11 @@
 
       <div id="mocha"></div>
       <script src="fib.js"></script>
+      <script>
+        mocha.setup("bdd");
+        tests();
+        mocha.run();
+      </script>
 
       <div id="sequence" style="float:left">
         <h2>The first 50</h2>
